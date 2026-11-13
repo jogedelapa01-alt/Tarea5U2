@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Botones de ejecución para NetBeans.
+  Clic derecho en el proyecto > Run Maven > elige una acción. Cada una abre su propia pestaña en Output.
+  F6 (Run Project) ejecuta el nivel 1.
+-->
+<actions>
+    <action>
+        <actionName>run</actionName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.local.DemoLocal</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-1-broker</actionName>
+        <displayName>1. Broker (puerto 5000)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.BrokerServidor</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-2-calificaciones</actionName>
+        <displayName>2. Proveedor calificaciones (6001)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.ProveedorServidor calificaciones 6001</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-3-materias</actionName>
+        <displayName>3. Proveedor materias (6002)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.ProveedorServidor materias 6002</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-4-biblioteca</actionName>
+        <displayName>4. Proveedor biblioteca (6003)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.ProveedorServidor biblioteca 6003</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-5-cliente</actionName>
+        <displayName>5. Cliente (demostración completa)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.ClienteRemoto</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-6-digital</actionName>
+        <displayName>6. Sustituir biblioteca por la digital (6004)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.ProveedorServidor biblioteca-digital 6004</exec.args>
+        </properties>
+    </action>
+
+    <action>
+        <actionName>CUSTOM-7-lento</actionName>
+        <displayName>7. Proveedor materias lento (prueba de timeout)</displayName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.executable>java</exec.executable>
+            <exec.args>-Dstdout.encoding=UTF-8 -cp %classpath broker.distribuido.ProveedorServidor materias 6005 5000</exec.args>
+        </properties>
+    </action>
+</actions>

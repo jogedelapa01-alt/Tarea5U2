@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Nivel 2 - Broker y 3 proveedores" type="CompoundRunConfigurationType">
+    <toRun name="1. Broker" type="Application" />
+    <toRun name="2. Proveedor calificaciones" type="Application" />
+    <toRun name="3. Proveedor materias" type="Application" />
+    <toRun name="4. Proveedor biblioteca" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>
